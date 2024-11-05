@@ -21,4 +21,14 @@ describe("Scoreboard", () => {
 		scoreboard.finishMatch("Mexico", "Canada");
 		expect(scoreboard.matches.length).toBe(0);
 	});
+
+	it("should get summary", () => {
+		const scoreboard = new Scoreboard();
+		scoreboard.startMatch("Mexico", "Canada");
+		scoreboard.updateScore("Mexico", "Canada", 0, 5);
+		scoreboard.startMatch("Spain", "Brazil");
+		scoreboard.updateScore("Spain", "Brazil", 10, 2);
+		const summary = scoreboard.getSummary();
+		expect(summary).toEqual(["Spain 10 - Brazil 2", "Mexico 0 - Canada 5"]);
+	});
 });
