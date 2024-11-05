@@ -31,7 +31,7 @@ npm install -g pnpm
 - Clone the repo:
 
 ```bash
-git clone https://github.com/cdemetriad/sportradar.git
+git clone https://github.com/chrisdemetriad/sportradar.git
 cd sportradar
 ```
 
