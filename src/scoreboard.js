@@ -24,6 +24,12 @@ class Scoreboard {
 		}
 	}
 
+	finishMatch(homeTeam, awayTeam) {
+		this.matches = this.matches.filter(
+			(m) => !(m.homeTeam === homeTeam && m.awayTeam === awayTeam),
+		);
+	}
+
 	getSummary() {
 		return this.matches.map(
 			(m) => `${m.homeTeam} ${m.homeScore} - ${m.awayTeam} ${m.awayScore}`,
