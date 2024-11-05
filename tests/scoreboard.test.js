@@ -14,4 +14,11 @@ describe("Scoreboard", () => {
 		expect(scoreboard.matches[0].homeScore).toBe(0);
 		expect(scoreboard.matches[0].awayScore).toBe(5);
 	});
+
+	it("should finish a match", () => {
+		const scoreboard = new Scoreboard();
+		scoreboard.startMatch("Mexico", "Canada");
+		scoreboard.finishMatch("Mexico", "Canada");
+		expect(scoreboard.matches.length).toBe(0);
+	});
 });
