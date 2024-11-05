@@ -4,7 +4,6 @@
 	"description": "",
 	"main": "src/scoreboard.js",
 	"scripts": {
-		"start": "node scoreboard.js",
 		"dev": "nodemon scoreboard.js",
 		"test": "jest"
 	},
