@@ -4,6 +4,13 @@ class Scoreboard {
 	}
 
 	startMatch(homeTeam, awayTeam) {
+		const existingMatch = this.matches.find(
+			(m) => m.homeTeam === homeTeam && m.awayTeam === awayTeam,
+		);
+		if (existingMatch) {
+			return;
+		}
+
 		const match = {
 			homeTeam,
 			awayTeam,
