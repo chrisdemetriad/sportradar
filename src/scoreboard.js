@@ -9,8 +9,19 @@ class Scoreboard {
 			awayTeam,
 			homeScore: 0,
 			awayScore: 0,
+			startTime: new Date(),
 		};
 		this.matches.push(match);
+	}
+
+	updateScore(homeTeam, awayTeam, homeScore, awayScore) {
+		const match = this.matches.find(
+			(m) => m.homeTeam === homeTeam && m.awayTeam === awayTeam,
+		);
+		if (match) {
+			match.homeScore = homeScore;
+			match.awayScore = awayScore;
+		}
 	}
 
 	getSummary() {
