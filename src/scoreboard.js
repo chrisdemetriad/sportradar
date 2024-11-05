@@ -43,10 +43,7 @@ class Scoreboard {
 			.sort((a, b) => {
 				const totalScoreA = a.homeScore + a.awayScore;
 				const totalScoreB = b.homeScore + b.awayScore;
-				if (totalScoreA !== totalScoreB) {
-					return totalScoreB - totalScoreA;
-				}
-				return b.startTime - a.startTime;
+				return totalScoreB - totalScoreA;
 			})
 			.map(
 				(m) => `${m.homeTeam} ${m.homeScore} - ${m.awayTeam} ${m.awayScore}`,
