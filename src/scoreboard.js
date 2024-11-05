@@ -31,9 +31,19 @@ class Scoreboard {
 	}
 
 	getSummary() {
-		return this.matches.map(
-			(m) => `${m.homeTeam} ${m.homeScore} - ${m.awayTeam} ${m.awayScore}`,
-		);
+		return this.matches
+			.slice()
+			.sort((a, b) => {
+				const totalScoreA = a.homeScore + a.awayScore;
+				const totalScoreB = b.homeScore + b.awayScore;
+				if (totalScoreA !== totalScoreB) {
+					return totalScoreB - totalScoreA;
+				}
+				return b.startTime - a.startTime;
+			})
+			.map(
+				(m) => `${m.homeTeam} ${m.homeScore} - ${m.awayTeam} ${m.awayScore}`,
+			);
 	}
 }
 
